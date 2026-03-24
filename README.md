@@ -1,4 +1,4 @@
-#PRÁCTICA 2: Metodología de la Programación
+# PRÁCTICA 2: Metodología de la Programación
 Autor: Ismael Valenzuela Mañas
 <br>
 Esta práctica usó el __IDE Visual Studio Code__ y también [CMake](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) para ejecutar las importaciones en __C++__. <br>
