@@ -7,9 +7,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Fuentes de la libreria (funcionalidad principal)
 set(PRACTICA_LIB_SOURCES
-		src/Carta.cpp
-		src/Mano.cpp
-		src/utils.cpp
+		src/Pelicula.cpp
+		src/ConjuntoPeliculas.cpp
 )
 
 add_library(practica_lib STATIC ${PRACTICA_LIB_SOURCES})

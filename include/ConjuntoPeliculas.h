@@ -116,7 +116,7 @@ public:
     
 private:
     static const int reservado=100;
-    Pelicula conj[reservado];
+    Pelicula *conj;
     int numpeliculas=0;
     
     
