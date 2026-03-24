@@ -57,34 +57,35 @@ public:
     ~Pelicula();
     
     /**
-     * @brief Modifica el id de la película. 
-     * @return Devuelve una referencia al entero id que permite modificar su valor.
+     * @brief Modifica el id de la película.
+     * @param newid Nuevo valor para el id.
      */
-    int & setId();
+    void setId(int newid);
     
     /**
      * @brief Modifica el nombre de la película
-     * @return Devuelve una referencia al string nombre que permite modificar su valor.
+     * @param newnombre Nuevo valor para el nombre de la película.
      */
-    string & setNombre();
+    void setNombre(const string &newnombre);
     
     /**
      * @brief Modifica la valoración IMDB de la película 
-     * @return Devuelve una referencia al flotante valoracion que permite modificar su valor.
+     * @param newvaloracion Nuevo valor para la valoración de la película. Debe ser un valor en el intervalo [0,10]. 
      */
-    float & setValoracion();
+    void setValoracion(float newvaloracion);
     
     /**
      * @brief Modifica el género asociado a la película
-     * @return Devuelve una referencia al string genero que permite modificar su valor.
+     * @param newgenero Nuevo valor para el género de la película.
+
      */
-    string & setGenero();
+    void setGenero(const string &newgenero);
     
     /**
      * @brief Modifica el año de estreno de la película
-     * @return Devuelve una referencia al valor de año que permite modificar su valor. 
+     * @param newanio Nuevo valor para el año de estreno de la película.
      */
-    int & setAnio();
+    void setAnio(int newanio);
     
     /**
      * @brief Devuelve el id de la película. 

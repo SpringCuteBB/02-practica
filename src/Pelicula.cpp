@@ -9,41 +9,46 @@
  */
 
 #include "Pelicula.h"
+#include <sstream>
 
-Pelicula::Pelicula() {
+Pelicula::Pelicula() : id(-1), nombre(""), valoracion(-1.0f), genero(""), anio(-1) {
   
 }
 
-Pelicula::Pelicula(int newid, string newnombre, int newanio, float newvaloracion, string newgenero){
-
+Pelicula::Pelicula(int newid, string newnombre, int newanio, float newvaloracion, string newgenero)
+: id(newid), nombre(newnombre), valoracion(newvaloracion), genero(newgenero), anio(newanio)
+{
 }
   
-Pelicula::Pelicula(const Pelicula& orig){
-      
+Pelicula::Pelicula(const Pelicula& orig)
+: id(orig.id), nombre(orig.nombre), valoracion(orig.valoracion), genero(orig.genero), anio(orig.anio)
+{
 }
 
 string Pelicula::to_string(){
-     
+	std::ostringstream oss;
+	oss << id << " " << nombre << " " << genero << " " << anio << " " << valoracion;
+	return oss.str();
 }
 
-int & Pelicula::setId(){
-     
+void Pelicula::setId(int newid){
+	id = newid;
 }
 
-string & Pelicula::setNombre(){
-    
+void Pelicula::setNombre(const string &newnombre){
+    nombre = newnombre;
 }
 
-float & Pelicula::setValoracion(){
-      
+void Pelicula::setValoracion(float newvaloracion){
+    valoracion = newvaloracion;
 }
 
-string & Pelicula::setGenero(){
-   
+void Pelicula::setGenero(const string &newgenero){
+    genero = newgenero;
 }
 
-int & Pelicula::setAnio(){
-   
+void Pelicula::setAnio(int newanio){
+    anio = newanio;
 }
 
 Pelicula::~Pelicula() {
@@ -51,21 +56,21 @@ Pelicula::~Pelicula() {
 }
 
 int Pelicula::getId(){
-   
+	return id;
 }
 
 string Pelicula::getNombre(){
-    
-}
+	 return nombre;
+}       
 
 string Pelicula::getGenero(){
-    
+	 return genero;
 }
 
 int Pelicula::getAnio(){
-    
+	 return anio;
 }
 
 float Pelicula::getValoracion(){
-   
+	return valoracion;
 }

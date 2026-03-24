@@ -5,7 +5,7 @@
 
 /* 
  * File:   main.cpp
- * Author: jamor
+ * Author: Ismael Valenzuela Mañas
  *
  * Created on 26 de septiembre de 2022, 11:03
  */
