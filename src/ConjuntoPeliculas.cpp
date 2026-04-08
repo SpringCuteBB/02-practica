@@ -18,10 +18,12 @@
 #include <algorithm>
 
 ConjuntoPeliculas::ConjuntoPeliculas() : numpeliculas(0) {
+	// Constructor: inicializa el array reservado y establece numpeliculas a 0.
 	conj = new Pelicula[reservado];
 }
 
 ConjuntoPeliculas::ConjuntoPeliculas(const ConjuntoPeliculas& orig) : numpeliculas(orig.numpeliculas) {
+	// Constructor copia: reserva memoria y copia las películas del objeto origen.
 	conj = new Pelicula[reservado];
 	for(int i = 0; i < numpeliculas; ++i){
 		conj[i] = orig.conj[i];
@@ -29,12 +31,14 @@ ConjuntoPeliculas::ConjuntoPeliculas(const ConjuntoPeliculas& orig) : numpelicul
 }
 
 ConjuntoPeliculas::~ConjuntoPeliculas() {
+	// Destructor: libera la memoria usada por el conjunto de películas.
 	delete [] conj;
 	conj = nullptr;
 }
 
 void ConjuntoPeliculas::leerFichero(string rutaFichero, int numdatos){
-   std::ifstream ifs(rutaFichero);
+	// Lee hasta `numdatos` películas desde un CSV (`rutaFichero`), parseando campos.
+	std::ifstream ifs(rutaFichero);
    if(!ifs.is_open()) return;
 
    // Vaciar información previa
@@ -80,12 +84,14 @@ void ConjuntoPeliculas::leerFichero(string rutaFichero, int numdatos){
 }
 
 void ConjuntoPeliculas::aniadePelicula(int newid, string newnombre, int newanio,float newvaloracion, string newgenero){
+	// Añade una nueva película si hay espacio reservado disponible.
 	if(numpeliculas >= reservado) return;
 	conj[numpeliculas] = Pelicula(newid, newnombre, newanio, newvaloracion, newgenero);
 	numpeliculas++;
 }
 
 void ConjuntoPeliculas::borrar(int id){
+	// Busca la película por `id` y la elimina desplazando los elementos siguientes.
 	int idx = -1;
 	for(int i = 0; i < numpeliculas; ++i){
 		if(conj[i].getId() == id){ idx = i; break; }
@@ -96,6 +102,7 @@ void ConjuntoPeliculas::borrar(int id){
 }
 
 Pelicula ConjuntoPeliculas::at(int id){
+	// Devuelve la película con `id` o un objeto vacío si no existe.
 	for(int i = 0; i < numpeliculas; ++i){
 		if(conj[i].getId() == id) return conj[i];
 	}
@@ -103,6 +110,7 @@ Pelicula ConjuntoPeliculas::at(int id){
 }
 
 void ConjuntoPeliculas::ordenaporranking(){
+	// Ordena las películas por valoración de mayor a menor (ordenación por selección).
 	for(int i = 0; i < numpeliculas; ++i){
 		int maxidx = i;
 		for(int j = i+1; j < numpeliculas; ++j){
@@ -115,7 +123,8 @@ void ConjuntoPeliculas::ordenaporranking(){
 }
 
 string ConjuntoPeliculas::to_string(){
-    std::ostringstream oss;
+	// Construye y devuelve una representación en texto de todas las películas.
+	std::ostringstream oss;
     for(int i = 0; i < numpeliculas; ++i){
         oss << conj[i].to_string();
         if(i + 1 < numpeliculas) oss << "\n";
@@ -123,6 +132,7 @@ string ConjuntoPeliculas::to_string(){
     return oss.str();
 }  
 void ConjuntoPeliculas::escribeFichero(string rutaFichero){
+	// Escribe el conjunto de películas en un CSV con la misma cabecera del original.
 	std::ofstream ofs(rutaFichero);
 	if(!ofs.is_open()) return;
 
@@ -158,8 +168,9 @@ void ConjuntoPeliculas::escribeFichero(string rutaFichero){
 }
    
 void ConjuntoPeliculas::clear(){
-    for(int i = 0; i < numpeliculas; ++i){
-        conj[i] = Pelicula();
-    }
-    numpeliculas = 0;
+	// Reinicia el conjunto dejando los objetos en estado por defecto y resetea el contador.
+	for(int i = 0; i < numpeliculas; ++i){
+		conj[i] = Pelicula();
+	}
+	numpeliculas = 0;
 }
