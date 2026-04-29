@@ -1,40 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/cppFiles/main.cc to edit this template
- */
-
-/* 
- * File:   main.cpp
- * Author: Ismael Valenzuela Mañas
- *
- * Created on 26 de septiembre de 2022, 11:03
- */
-
-#include <cstdlib>
-#include "Pelicula.h"
-#include "ConjuntoPeliculas.h"
 #include <iostream>
-using namespace std;
+#include <vector>
+#include <string>
 
-/*
- * 
- */
-int main(int argc, char** argv) {
-    /*Pelicula peli(2,"hola",2022,4.5,"accion");
-    //cout << peli.to_string();        
-    Pelicula pelivacia;
-    //cout << pelivacia.to_string();
-    ConjuntoPeliculas pelis;
-    pelis.leerFichero("./data/reducedactionmovies.csv",100);
-  // pelis.leerFichero("./data/ficherocreado.csv",90);
-   cout << pelis.to_string();
-   cout << endl << endl;
-    pelis.ordenaporranking();
-    pelis.borrar(90);
-    cout << pelis.to_string();
-    pelis.escribeFichero("./data/ficherocreado.csv");
-    cout << endl << endl;
-    cout << pelis.at(64).to_string();
-    return 0;*/
+#include "funcionesSopa.h"
+
+int main() {
+    const std::string ficheroSopa    = "data/sopa.txt";
+    const std::string ficheroPalabras = "data/palabras.txt";
+
+    // --- Cargar datos ---
+    std::vector<std::vector<char>> sopa;
+    std::vector<std::string> palabras;
+
+    try {
+        leerSopa(ficheroSopa, sopa);
+        leerPalabras(ficheroPalabras, palabras);
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << '\n';
+        return 1;
+    }
+
+    // --- Mostrar la sopa ---
+    std::cout << "=== Sopa de letras ===\n";
+    mostrarSopa(sopa);
+    std::cout << '\n';
+
+    // --- Buscar cada palabra ---
+    std::cout << "=== Busqueda de palabras ===\n";
+    for (const auto& palabra : palabras) {
+        int fila = -1, col = -1;
+        std::string dir;
+
+        if (buscarPalabra(sopa, palabra, fila, col, dir))
+            std::cout << "\"" << palabra << "\" encontrada en ("
+                      << fila << ", " << col << ") direccion: " << dir << '\n';
+        else
+            std::cout << "\"" << palabra << "\" NO encontrada\n";
+    }
+
+    return 0;
 }
+
 

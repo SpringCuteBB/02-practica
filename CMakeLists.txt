@@ -7,8 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Fuentes de la libreria (funcionalidad principal)
 set(PRACTICA_LIB_SOURCES
-		src/Pelicula.cpp
-		src/ConjuntoPeliculas.cpp
+		src/funcionesSopa.cpp
 )
 
 add_library(practica_lib STATIC ${PRACTICA_LIB_SOURCES})
