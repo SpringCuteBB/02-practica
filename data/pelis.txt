@@ -1,0 +1,13 @@
+;Movie title;Released Year;ImDb Rating
+0;Thor: Love and Thunder;2022;6,4
+1;Top Gun: Maverick;2022;8,4
+2;Brahmastra Part One: Shiva;2022;5,6
+3;The Woman King;2022;6,1
+4;End of the Road;2022;4,7
+5;Bullet Train;2022;7,5
+6;Moonfall;2022;5,1
+7;Everything Everywhere All at Once;2022;8,1
+8;Morbius;2022;5,2
+9;The Lord of the Rings: The Fellowship of the Ring;2001;8,8
+10;Top Gun;1986;6,9
+11;Samaritan;2022;5,7

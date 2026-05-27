@@ -4,5 +4,4 @@
 /lib/*
 /build/*
 *.exe
-/data/*
 *.csv

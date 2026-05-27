@@ -1,0 +1,18 @@
+17
+0 Nick1 user1@correo.es 6 7: 2 3 6 7 8 10 15
+1 Nick2 user2@correo.es 6 4: 4 6 7 9
+2 Nick3 user3@correo.es 5 2: 16 17
+3 Nick4 user4@correo.es 7 4: 2 14 15 16
+4 Nick5 user5@correo.es 6 3: 6 7 9
+5 Nick6 user6@correo.es 7 2: 5 9
+6 Nick7 user7@correo.es 7 7: 1 2 3 5 6 8 9
+7 Nick8 user8@correo.es 6 4: 2 4 7 9
+8 Nick9 user9@correo.es 7 3: 3 5 7
+9 Nick10 user10@correo.es 7 3: 2 4 7
+10 Nick11 user11@correo.es 6 3: 10 12 13
+11 Nick12 user12@correo.es 6 5: 7 8 9 10 11
+12 Nick13 user13@correo.es 7 3: 1 4 8
+13 Nick14 user14@correo.es 7 2: 2 5
+14 Nick15 user15@correo.es 6 2: 4 7
+15 Nick16 user16@correo.es 5 3: 2 3 10
+16 Nick17 user17@correo.es 8 5: 7 8 9 10 12
